@@ -1,0 +1,30 @@
+//protobuf的序列化类定义文件，需使用proto生成要序列化的类对象,win: .\protoc.exe --java_out=输出目录 proto定义文件
+//语法采用3标准，默认是2
+syntax = "proto3";
+//生成java类的包名，生成的java类名，不写输出classname默认为文件名
+option java_package = "tom.example.serialize.protobuf";
+option java_outer_classname = "PersonProto";
+
+//PersonProto的内部类 字段名等号后面的是字段属性标识，不能重复
+message Person {
+    //声明内部类的属性，及属性类型，属性编号：在同一个message内部是全局唯一的，不能够重复。
+    string name = 1;
+    //无符号整型，有符号的话sint32
+    int32 age = 2;
+    bool sex = 3;
+    int64 birthday = 4;
+    string address = 5;
+    //required、optional、repeated标注存在着3中，在3.0之前，标注是必须的，但在3.0之后required、optional是可以不写的
+    //repeated 代表是集合类型
+    repeated Car cars = 6;
+    map<string, string> other = 7;
+}
+
+message Car {
+    string name = 1;
+    string color = 2;
+    string engine = 3;
+    //车牌号，使用下划线命名，在java类中会转换为驼峰命名的
+    string plate_number = 4;
+    double price = 5;
+}
