@@ -2,6 +2,7 @@ package springstudy;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @ProjectName: tbhStudy
@@ -18,5 +19,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("springstudy")
+//@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class AppConfig {
 }
