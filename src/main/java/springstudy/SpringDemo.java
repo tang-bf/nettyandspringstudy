@@ -2,9 +2,12 @@ package springstudy;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.stereotype.Component;
 import thrift.generated.PersonServese;
 
@@ -31,6 +34,7 @@ public class SpringDemo  { //implements   FactoryBean{   factoryBean就是一个
          * 传入参数为注解配置类的时候  DefaultListableBeanFactory 中
          * Map<String, BeanDefinition> beanDefinitionMap 会有6个rootbean
          * 加上注解类配置的扫描包下面的所有类
+         *
          */
 //        AnnotationConfigApplicationContext annotationConfigApplicationContext
 //                = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -39,6 +43,8 @@ public class SpringDemo  { //implements   FactoryBean{   factoryBean就是一个
        // ConfigurableListableBeanFactory DefaultListableBeanFactory
         //annotationConfigApplicationContext.getBean(SpringDemo.class);
         //单独注册普通bean的时候需要手动refresh，否则报错
+        //ApplicationContextAware
+        ImportBeanDefinitionRegistrar
         /**
          * AnnotationConfigApplicationContext@51521cc1 has not been refreshed yet
          */
@@ -50,6 +56,7 @@ public class SpringDemo  { //implements   FactoryBean{   factoryBean就是一个
         IndexDao dao1 =(IndexDao) annotationConfigApplicationContext.getBean(IndexDao.class);
         System.out.println(dao ==dao1);//通过自定义实现的beanfactorypostprocessor 改变了indexDao的作用域为圆形
         dao.query();
+       // DefaultListableBeanFactory
      //   annotationConfigApplicationContext.scan("com.java");
 
     }

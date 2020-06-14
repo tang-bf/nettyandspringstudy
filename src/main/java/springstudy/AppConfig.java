@@ -3,6 +3,7 @@ package springstudy;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 
 /**
  * @ProjectName: tbhStudy
@@ -19,6 +20,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan("springstudy")
+//@Import(MyImportSelector.class)  //通过import 引入实现了importselector的类
 //@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class AppConfig {
 }
