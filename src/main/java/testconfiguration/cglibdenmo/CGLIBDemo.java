@@ -1,8 +1,8 @@
 package testconfiguration.cglibdenmo;
 
-import org.springframework.cglib.core.SpringNamingPolicy;
+//import org.springframework.cglib.core.SpringNamingPolicy;
 import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.context.annotation.ConfigurationClassEnhancer;
+//import org.springframework.context.annotation.ConfigurationClassEnhancer;
 
 /**
  * @ProjectName: tbhStudy
