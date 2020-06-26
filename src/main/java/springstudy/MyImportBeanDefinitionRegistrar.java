@@ -28,12 +28,15 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 //        BeanDefinition beanDefinition = new BeanDefinition() {
 //        }
-      UserDao dao = (UserDao) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{UserDao.class},new MyInvocationHandler());
+     // UserDao dao = (UserDao) Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{UserDao.class},new MyInvocationHandler());
         //模拟mybatis mapperscan
         // 扫描接口得到dao
         // 产生bd
-        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(dao.getClass());
+    //    BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(dao.getClass());
+        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(UserDao.class);
         GenericBeanDefinition beanDefinition =(GenericBeanDefinition) beanDefinitionBuilder.getBeanDefinition();
+        beanDefinition.setBeanClass(UserDaoProxy.class);
+        //beanDefinition.getConstructorArgumentValues().addGenericArgumentValue();
         registry.registerBeanDefinition("userDao",beanDefinition);
     }
 }

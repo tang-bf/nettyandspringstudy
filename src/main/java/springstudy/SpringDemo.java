@@ -44,7 +44,7 @@ public class SpringDemo  { //implements   FactoryBean{   factoryBean就是一个
         //annotationConfigApplicationContext.getBean(SpringDemo.class);
         //单独注册普通bean的时候需要手动refresh，否则报错
         //ApplicationContextAware
-        ImportBeanDefinitionRegistrar
+        //ImportBeanDefinitionRegistrar
         /**
          * AnnotationConfigApplicationContext@51521cc1 has not been refreshed yet
          */

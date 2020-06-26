@@ -1,5 +1,6 @@
 package springstudy;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class IndexDao {
+    @Autowired
+    AppConfig appConfig;
     public void query(){
         System.out.println("test");
     }
