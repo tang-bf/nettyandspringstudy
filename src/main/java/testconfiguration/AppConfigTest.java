@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
  * @Version: 1.0
  */
 @Configuration
-@ComponentScan("testconfiguration")
+@ComponentScan(value = "testconfiguration")
 public class AppConfigTest {
     @Bean
     public UserService userService(){
