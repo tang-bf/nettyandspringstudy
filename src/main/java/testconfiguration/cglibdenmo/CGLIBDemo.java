@@ -30,6 +30,7 @@ public class CGLIBDemo  {
 //        enhancer.setStrategy(new ConfigurationClassEnhancer.BeanFactoryAwareGeneratorStrategy(classLoader));
 //        enhancer.setCallbackFilter(CALLBACK_FILTER);
 //        enhancer.setCallbackTypes(CALLBACK_FILTER.getCallbackTypes());
+        enhancer.create();
 
     }
 }
