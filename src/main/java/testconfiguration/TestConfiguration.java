@@ -1,7 +1,10 @@
 package testconfiguration;
 
+import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
+import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 
 import java.io.IOException;
 
@@ -38,5 +41,8 @@ public class TestConfiguration {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+       // ConfigurationClassPostProcessor
+        //AutowiredAnnotationBeanPostProcessor 处理autowired自动注入
+        //CommonAnnotationBeanPostProcessor resource自动注入
     }
 }
