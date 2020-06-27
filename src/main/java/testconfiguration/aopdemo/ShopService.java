@@ -3,6 +3,8 @@ package testconfiguration.aopdemo;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.annotation.WebServlet;
+
 /**
  * @ProjectName: tbhStudy
  * @Package: testconfiguration.aopdemo
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @Version: 1.0
  */
 @Service("shopService")
+//@WebServlet
 public class ShopService implements  ShopInterface{
     public void query(String s1){
         System.out.println("query ------");

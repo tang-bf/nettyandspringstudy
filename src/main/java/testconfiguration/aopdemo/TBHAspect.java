@@ -19,6 +19,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan("testconfiguration.aopdemo*")
 @EnableAspectJAutoProxy(proxyTargetClass = false)
+//注册了一个beanpostprocessor
+//AopConfigUtils.registerAspectJAnnotationAutoProxyCreatorIfNecessary(registry);
+//AnnotationAwareAspectJAutoProxyCreator.class  extends AbstractAutoProxyCreator
 /**
  * proxyTargetClass
  * true

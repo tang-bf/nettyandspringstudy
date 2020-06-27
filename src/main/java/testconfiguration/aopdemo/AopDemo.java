@@ -22,11 +22,11 @@ import org.springframework.stereotype.Component;
  * @Version: 1.0
  */
 @Component
-@Aspect//("perthis(target(testconfiguration.aopdemo.ShopService))")//perthis pertarget必须让切面是原型，否则报错
+@Aspect("perthis(target(testconfiguration.aopdemo.ShopService))")//perthis pertarget必须让切面是原型，否则报错
 /**
  * Bean with name 'aopDemo' is a singleton, but aspect instantiation model is not singleton
  */
-//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class AopDemo {
     //作用到具体方法上
     @Pointcut("execution(* testconfiguration.aopdemo.*.*(..))")
@@ -46,6 +46,10 @@ public class AopDemo {
     //target表示目标对象  this target 是否一致取决于用的jdk动态代理还是cglib
     @Pointcut("this(testconfiguration.aopdemo.ShopService)")
     public void pointThis (){
+
+    }
+    @Pointcut("this(testconfiguration.aopdemo.ShopInterface)")
+    public void pointThisInterFace (){
 
     }
     @Pointcut("target(testconfiguration.aopdemo.ShopService)")
@@ -70,6 +74,11 @@ public class AopDemo {
 //    public void pointCutExecution8(){
 //
 //    }
+
+    @Before("pointThisInterFace()")
+    public void logDemoThisInterface (){
+        System.out.println("thisINterface  执行......");
+    }
     @Before("pointThis()")
     public void logDemoThis (){
         System.out.println("this  执行......");
