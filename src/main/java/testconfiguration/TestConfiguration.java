@@ -31,6 +31,8 @@ public class TestConfiguration {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext
                 = new AnnotationConfigApplicationContext(AppConfigTest.class);
+//        OrderService bean = annotationConfigApplicationContext.getBean(OrderService.class);
+//        System.out.println(bean.getClass().getName());
         OrderService bean = annotationConfigApplicationContext.getBean(OrderService.class);
         System.out.println(bean.getClass().getName());
         //bean.query();

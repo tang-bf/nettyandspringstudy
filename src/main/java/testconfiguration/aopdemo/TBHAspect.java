@@ -1,5 +1,7 @@
 package testconfiguration.aopdemo;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
@@ -14,7 +16,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @UpdateRemark:
  * @Version: 1.0
  */
-@EnableAspectJAutoProxy(proxyTargetClass = true)
+@Configuration
+@ComponentScan("testconfiguration.aopdemo*")
+@EnableAspectJAutoProxy(proxyTargetClass = false)
 /**
  * proxyTargetClass
  * true
@@ -24,6 +28,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 目标对象实现了接口 – 使用JDK动态代理机制(代理所有实现了的接口)
  * 目标对象没有接口(只有实现类) – 使用CGLIB代理机制
  */
+
 public class TBHAspect  {
     /**
      * Spring AOP支持AspectJ的singleton、perthis、pertarget实例化模型（目前不支持percflow、percflowbelow 和pertypewithin）。

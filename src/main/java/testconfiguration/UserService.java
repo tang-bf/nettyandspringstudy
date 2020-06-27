@@ -15,6 +15,6 @@ package testconfiguration;
 
 public class UserService {
     public UserService(){
-        System.out.println("init");
+        System.out.println("userService init");
     }
 }
