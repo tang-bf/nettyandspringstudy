@@ -20,6 +20,12 @@ import javax.servlet.ServletRegistration;
  * @UpdateDate: 2020-06-27 22:59
  * @UpdateRemark:
  * @Version: 1.0
+ *
+ *
+ *
+ * spring 中
+ *  * @HandlesTypes(WebApplicationInitializer.class)
+ *  * public class SpringServletContainerInitializer implements ServletContainerInitializer {
  */
 
 public class MyDispatcherServlet  implements WebApplicationInitializer {
