@@ -26,6 +26,7 @@ import javax.servlet.ServletRegistration;
  * spring 中
  *  * @HandlesTypes(WebApplicationInitializer.class)
  *  * public class SpringServletContainerInitializer implements ServletContainerInitializer {
+ *  spring  mvc >>>springboot零配置是很平滑的过度，只不过我们及很多人没发觉
  */
 
 public class MyDispatcherServlet  implements WebApplicationInitializer {
@@ -59,5 +60,6 @@ public class MyDispatcherServlet  implements WebApplicationInitializer {
         ServletRegistration.Dynamic registration = servletContext.addServlet("app", servlet);
         registration.setLoadOnStartup(1);
         registration.addMapping("*.do");
+
     }
 }

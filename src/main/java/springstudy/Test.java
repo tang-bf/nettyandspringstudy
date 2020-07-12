@@ -22,7 +22,7 @@ import org.springframework.util.PropertyPlaceholderHelper;
  * @UpdateRemark:
  * @Version: 1.0
  */
-//@MapperScan
+@MapperScan
 public class Test {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext

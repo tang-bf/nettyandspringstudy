@@ -1,6 +1,10 @@
 package springstudy;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.*;
+
+import javax.sql.DataSource;
 
 /**
  * @ProjectName: tbhStudy
@@ -32,5 +36,11 @@ import org.springframework.context.annotation.*;
 @EnableAspectJAutoProxy
 //@EnableAspectJAutoProxy(proxyTargetClass = false)
 public class AppConfig {
-   // @Bean
+//    @Bean
+//    public SqlSessionFactoryBean
+//public static void main(String[] args) {
+//
+//    //SqlSessionFactoryBean
+//    DataSource
+//}
 }

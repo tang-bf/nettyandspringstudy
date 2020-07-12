@@ -1,5 +1,8 @@
 package springmvctestdemo.test;
 
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 /**
  * @ProjectName: tbhStudy
  * @Package: springmvctestdemo.test
@@ -14,4 +17,8 @@ package springmvctestdemo.test;
  */
 
 public class Y implements X {
+    @Transactional(propagation=Propagation.REQUIRED)
+    public  void query(){
+        System.out.println("-----------");
+    }
 }

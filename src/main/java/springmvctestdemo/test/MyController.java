@@ -2,8 +2,12 @@ package springmvctestdemo.test;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import sun.applet.resources.MsgAppletViewer;
 
 import java.lang.annotation.Retention;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @ProjectName: tbhStudy
@@ -20,8 +24,13 @@ import java.lang.annotation.Retention;
 @Controller
 public class MyController {
     @RequestMapping("/query.do")
-    public  String query(){
+    @ResponseBody
+    //如果直接返回string spring是可以直接解析的StringHttpMessageConverter ，如果返回map，则需要配置解析
+    //有xml配置的，也可通过appconfig implements WebMvcConfigurer 重写 configureMessageConverters
+    public  Map<String,String>  query(){
         System.out.println("query ---");
-        return "success";
+        Map<String,String> map = new HashMap<>();
+        map.put("hello","success");
+        return map;
     }
 }
