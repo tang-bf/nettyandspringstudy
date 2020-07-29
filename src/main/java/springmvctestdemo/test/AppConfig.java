@@ -1,6 +1,7 @@
 package springmvctestdemo.test;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -11,8 +12,11 @@ import org.springframework.validation.MessageCodesResolver;
 import org.springframework.validation.Validator;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import java.util.List;
 
@@ -31,9 +35,22 @@ import java.util.List;
 @Component
 @ComponentScan("springmvctestdemo")
 //加上注解mvc实质生效
-@EnableWebMvc
+//@EnableWebMvc
 @EnableTransactionManagement
 public class AppConfig implements  WebMvcConfigurer {
+//    @Bean
+//    public InternalResourceViewResolver internalResourceViewResolver(){
+//        InternalResourceViewResolver internalResourceViewResolver = (InternalResourceViewResolver) new UrlBasedViewResolver();
+//        internalResourceViewResolver.setPrefix("/");
+//        internalResourceViewResolver.setSuffix(".jsp");
+//        internalResourceViewResolver.setExposeContextBeansAsAttributes(true);
+//        return internalResourceViewResolver;
+//    }
+//    @Bean("multipartResolver")//名字必须是这个，为什么？
+//    public CommonsMultipartResolver commonsMultipartResolver(){
+//        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+//        return commonsMultipartResolver;
+//    }
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
 
@@ -81,6 +98,14 @@ public class AppConfig implements  WebMvcConfigurer {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
+        //底层调用的就是public UrlBasedViewResolverRegistration jsp(String prefix, String suffix) {
+        //		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        //		resolver.setPrefix(prefix);
+        //		resolver.setSuffix(suffix);
+        //		this.viewResolvers.add(resolver);
+        //		return new UrlBasedViewResolverRegistration(resolver);
+        //	}
+        registry.jsp();
 
     }
 

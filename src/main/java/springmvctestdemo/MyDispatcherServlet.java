@@ -3,6 +3,7 @@ package springmvctestdemo;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import springmvctestdemo.test.AppConfig;
 
 import javax.servlet.ServletContext;
@@ -54,7 +55,7 @@ public class MyDispatcherServlet  implements WebApplicationInitializer {
                 =new AnnotationConfigWebApplicationContext();
         webApplicationContext.register(AppConfig.class);
         webApplicationContext.refresh();
-
+        //AbstractAnnotationConfigDispatcherServletInitializer
         // Create and register the DispatcherServlet
         DispatcherServlet servlet = new DispatcherServlet(webApplicationContext);
         ServletRegistration.Dynamic registration = servletContext.addServlet("app", servlet);
