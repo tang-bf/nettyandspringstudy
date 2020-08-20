@@ -1,0 +1,21 @@
+    spring  mvc >>>springboot零配置是很平滑的过度，只不过我们及很多人没发觉
+<!-- Spring配置文件开始  -->
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+        classpath:spring-config.xml
+    </param-value>
+</context-param>
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+<!-- Spring配置文件结束 -->
+如果只做springwebmvc功能，只需要引入webmnv依赖的jar包，可以看到里面已经有context,core,bean等依赖
+DispatcherServlet.properties  HandlerMapping HandlerAdapter  ViewResolver 等属性
+ContextLoaderListener extends ContextLoader implements ServletContextListener {
+ServletContextListener
+public void contextInitialized(ServletContextEvent event) {
+		initWebApplicationContext(event.getServletContext());
+	}
+	initWebApplicationContext 作用 ： this.context = createWebApplicationContext(servletContext);
+	完成实际的WebApplicationContext，也就是Ioc容器的初始化工
