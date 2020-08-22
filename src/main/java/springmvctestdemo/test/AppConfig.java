@@ -33,7 +33,14 @@ import java.util.List;
  * @Version: 1.0
  */
 
-/**
+/** spring会判断是不是合成类 合成方法(合成注释摘自百度 隐秘而诡异的Java合成方法http://blog.iderzheng.com/java-synthetic-methods/ )
+ * Java程序里其实有很多我们看不到的代码，这些代码由Java编译器在编译过程中生成帮助程序更准确地运行。
+ * 本文就来深入了解一下由编译器加入到Java代码中的方法(Method)，特别是合成方法(Synthetic Method)。
+ * 合成成员(Synthetic Member)在JVM细则里可以找到简单的定义
+ * A class member that does not appear in the source code
+ * must be marked using a Synthetic attribute, or else it must have its ACC_SYNTHETIC flag set.
+ *isSynthetic 内部类 类的flags包含ACC_SYNTHETIC。匿名内部类字节码中没有ACC_SYNTHETIC标记，说明其与 synthetic 无关。
+ *lambda表达式没有通过内部类实现，而是通过invokedynamic这个指令解决的。
  * xml方式配置spring mvc
  * 编写web.xml；注册listener、注册servlet、注册servlet-mapping
  * 编写spring-mvc.xml
