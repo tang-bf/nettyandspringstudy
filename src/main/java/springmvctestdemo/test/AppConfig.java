@@ -43,11 +43,12 @@ import java.util.List;
  * 自定义controller类和业务逻辑
  * 打包部署到web容器(通常使用tomcat)
  *
- * 零xml配置 & 内置tomcat 启动spring mvc
+ * 零xml配置  内置tomcat 启动spring mvc
  * AppConfig 代替spring-mvc.xml
  * 注解方式驱动springmvc，等同于<annotation:driver>
  * 不加不会解析WebMvcConfigurer接口
  *  如果不加@EnableWebMvc，就要改成extends WebMvcConfigurationSupport
+ *  因为@EnableWebMvc  import 的DelegatingWebMvcConfiguration 也是extends WebMvcConfigurationSupport
  */
 @Component
 @ComponentScan("springmvctestdemo")
