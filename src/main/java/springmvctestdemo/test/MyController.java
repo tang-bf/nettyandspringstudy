@@ -30,6 +30,7 @@ public class MyController {
     public  Map<String,String>  query(){
         System.out.println("query ---");
         Map<String,String> map = new HashMap<>();
+        System.out.println(MyController.class.getResource("/").getPath());
         map.put("hello","success");
         return map;
     }

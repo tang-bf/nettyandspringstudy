@@ -30,7 +30,7 @@ public class MyTomcatServer {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(9898);
         tomcat.addWebapp("/","d:\\tomc\\");
-        //tomcat.addContext()
+       // tomcat.addContext()
         try{
             tomcat.start();
             //tomcat就是一个socket连接.所以要使其阻塞

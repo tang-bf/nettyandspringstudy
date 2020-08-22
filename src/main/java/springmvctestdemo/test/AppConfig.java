@@ -37,7 +37,11 @@ import java.util.List;
 //加上注解mvc实质生效
 //@EnableWebMvc
 @EnableTransactionManagement
-public class AppConfig implements  WebMvcConfigurer {
+public class AppConfig {//implements  WebMvcConfigurer {
+//    @Bean
+//    public HttpMessageConverter get(){
+//        return new FastJsonHttpMessageConverter();
+//    }
 //    @Bean
 //    public InternalResourceViewResolver internalResourceViewResolver(){
 //        InternalResourceViewResolver internalResourceViewResolver = (InternalResourceViewResolver) new UrlBasedViewResolver();
@@ -51,105 +55,106 @@ public class AppConfig implements  WebMvcConfigurer {
 //        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
 //        return commonsMultipartResolver;
 //    }
-    @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-
-    }
-
-    @Override
-    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-
-    }
-
-    @Override
-    public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
-
-    }
-
-    @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-
-    }
-
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-
-    }
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
-    }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-
-    }
-
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-
-    }
-
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-        //底层调用的就是public UrlBasedViewResolverRegistration jsp(String prefix, String suffix) {
-        //		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        //		resolver.setPrefix(prefix);
-        //		resolver.setSuffix(suffix);
-        //		this.viewResolvers.add(resolver);
-        //		return new UrlBasedViewResolverRegistration(resolver);
-        //	}
-        registry.jsp();
-
-    }
-
-    @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-
-    }
-
-    @Override
-    public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
-
-    }
-
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(new FastJsonHttpMessageConverter());
-
-    }
-
-    @Override
-    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-
-    }
-
-    @Override
-    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-
-    }
-
-    @Override
-    public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-
-    }
-
-    @Override
-    public Validator getValidator() {
-        return null;
-    }
-
-    @Override
-    public MessageCodesResolver getMessageCodesResolver() {
-        return null;
-    }
-//    public static void main(String[] args) {
-//        StringHttpMessageConverter
+//    @Override
+//    public void configurePathMatch(PathMatchConfigurer configurer) {
+//
 //    }
+//
+//    @Override
+//    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+//
+//    }
+//
+//    @Override
+//    public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+//
+//    }
+//
+//    @Override
+//    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+//
+//    }
+//
+//    @Override
+//    public void addFormatters(FormatterRegistry registry) {
+//
+//    }
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//
+//    }
+//
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//
+//    }
+//
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//
+//    }
+//
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//
+//    }
+//
+//    @Override
+//    public void configureViewResolvers(ViewResolverRegistry registry) {
+//        //底层调用的就是public UrlBasedViewResolverRegistration jsp(String prefix, String suffix) {
+//        //		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//        //		resolver.setPrefix(prefix);
+//        //		resolver.setSuffix(suffix);
+//        //		this.viewResolvers.add(resolver);
+//        //		return new UrlBasedViewResolverRegistration(resolver);
+//        //	}
+//        registry.jsp();
+//
+//    }
+//
+//    @Override
+//    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+//
+//    }
+//
+//    @Override
+//    public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
+//
+//    }
+//
+//    @Override
+//    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//        System.out.println("fast json ----");
+//        converters.add(new FastJsonHttpMessageConverter());
+//
+//    }
+//
+//    @Override
+//    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+//
+//    }
+//
+//    @Override
+//    public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+//
+//    }
+//
+//    @Override
+//    public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+//
+//    }
+//
+//    @Override
+//    public Validator getValidator() {
+//        return null;
+//    }
+//
+//    @Override
+//    public MessageCodesResolver getMessageCodesResolver() {
+//        return null;
+//    }
+////    public static void main(String[] args) {
+////        StringHttpMessageConverter
+////    }
 }
