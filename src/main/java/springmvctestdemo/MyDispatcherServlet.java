@@ -50,14 +50,18 @@ public class MyDispatcherServlet  implements WebApplicationInitializer {
      * SpringServletContainerInitializer类中@HandlesTypes指定的是Class对象是WebApplicationInitializer.Class。
      * 利用这个机制，若实现WebApplicationInitializer这个接口，我们就可以自定义的注入Servlet，或者Filter，即可以不再依赖web.xml的配置。
      */
+    //初始化spring容器，注册servlet和注册servlet-mapping
     public void onStartup(ServletContext servletContext) throws ServletException {
+        // ServletContext代替web.xml
         System.out.println("init ");
+        // 实例化spring容器
         AnnotationConfigWebApplicationContext webApplicationContext
                 =new AnnotationConfigWebApplicationContext();
         webApplicationContext.register(AppConfig.class);
-        webApplicationContext.refresh();
+       // webApplicationContext.refresh();
         //AbstractAnnotationConfigDispatcherServletInitializer
         // Create and register the DispatcherServlet
+        // DispatcherServlet注册到web容器
         DispatcherServlet servlet = new DispatcherServlet(webApplicationContext);
         ServletRegistration.Dynamic registration = servletContext.addServlet("app", servlet);
         registration.setLoadOnStartup(1);
