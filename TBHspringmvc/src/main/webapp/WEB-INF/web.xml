@@ -8,17 +8,17 @@
 
 
   <servlet>
-    <servlet-name>lubanMvc</servlet-name>
-    <servlet-class>com.servlet.LuBanDispatcherServlet</servlet-class>
+    <servlet-name>TBHMvc</servlet-name>
+    <servlet-class>com.servlet.TBHDispatcherServlet</servlet-class>
     <init-param>
       <param-name>xmlPathLocal</param-name>
-      <param-value>lubanMvc.xml</param-value>
+      <param-value>TBHMvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>lubanMvc</servlet-name>
+    <servlet-name>TBHMvc</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 

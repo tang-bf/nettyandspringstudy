@@ -1,8 +1,0 @@
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:13:15 +0800] "GET /test/test.do?name=1&age=1&sex=7 HTTP/1.1" 200 4 http-bio-80-exec-1 30
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:13:15 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-80-exec-3 6
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:13:39 +0800] "GET /test/model.do?name=1&age=1&sex=7 HTTP/1.1" 200 159 http-bio-80-exec-4 6
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:20:40 +0800] "GET /test/model.do?name=1&age=1&sex=7 HTTP/1.1" 304 - http-bio-80-exec-9 37
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:20:50 +0800] "GET /test/model.do?name=1&age=1&sex=8 HTTP/1.1" 200 159 http-bio-80-exec-9 2
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:21:09 +0800] "GET /test/model.do?name=1&age=1&sex=8 HTTP/1.1" 200 159 http-bio-8081-exec-1 50
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:21:09 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8081-exec-3 4
-0:0:0:0:0:0:0:1 - - [22/Aug/2020:22:21:28 +0800] "GET /test/test.do?name=1&age=1&sex=8 HTTP/1.1" 200 4 http-bio-8081-exec-4 3

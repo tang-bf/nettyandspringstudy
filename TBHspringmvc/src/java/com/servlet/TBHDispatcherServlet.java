@@ -23,7 +23,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LuBanDispatcherServlet extends HttpServlet {
+public class TBHDispatcherServlet extends HttpServlet {
 
 
     private static String  COMPENT_SCAN_ELEMENT_PACKAGE_NAME= "package";
@@ -35,7 +35,7 @@ public class LuBanDispatcherServlet extends HttpServlet {
     private  static String prefix = "";
     private  static String suffix = "";
 
-    private static String projectPath = LuBanDispatcherServlet.class.getResource("/").getPath();
+    private static String projectPath = TBHDispatcherServlet.class.getResource("/").getPath();
 
     private  static Map<String,Method> methodMap = new HashMap<>();
 
@@ -54,9 +54,9 @@ public class LuBanDispatcherServlet extends HttpServlet {
      */
     @Override
     public void init(ServletConfig config) throws ServletException {
-        //解析xml  解析web.xml 解析lubanMvc.xml
-//        lubanMvc.xml
-        //initParameter 就是用户在web.xml里面指定的配置文件的地址 :lubanMvc.xml
+        //解析xml  解析web.xml 解析TBHMvc.xml
+//        TBHMvc.xml
+        //initParameter 就是用户在web.xml里面指定的配置文件的地址 :TBHMvc.xml
 //        \\  =\   //  d:\\\\  = d:\\  d://// =
         //projectPath需要进行url转义 空格 会变成%20
 //        URLEncoder;
