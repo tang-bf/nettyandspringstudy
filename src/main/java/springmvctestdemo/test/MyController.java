@@ -1,6 +1,7 @@
 package springmvctestdemo.test;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sun.applet.resources.MsgAppletViewer;
@@ -22,7 +23,7 @@ import java.util.Map;
  * @Version: 1.0
  */
 @Controller
-public class MyController {
+public class MyController   {
     @RequestMapping("/query.do")
     @ResponseBody
     //如果直接返回string spring是可以直接解析的StringHttpMessageConverter ，如果返回map，则需要配置解析

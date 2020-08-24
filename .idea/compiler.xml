@@ -13,6 +13,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding UTF-8 -parameters " />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TBHspringmvc" options="" />
       <module name="tbhStudy" options="" />
     </option>
   </component>
