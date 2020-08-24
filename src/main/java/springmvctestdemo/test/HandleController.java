@@ -22,6 +22,7 @@ public class HandleController implements HttpRequestHandler {
     // requestmappinghandlemapping (mappingregistry registry(map requsetmappinginfo query.do bean=mycontroller method query  ))
     // beannameurlhandlermapping (handlermap beannamecontroller user.do test3)
     // getHandlerAdapter 会有三个requestmappinghandleradapter  httprequesthand...  simplecontrollerhand...
+    //HandlerMethodArgumentResolver
     @Override
     public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("111");

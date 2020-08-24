@@ -28,7 +28,7 @@ public class MyController   {
     @ResponseBody
     //如果直接返回string spring是可以直接解析的StringHttpMessageConverter ，如果返回map，则需要配置解析
     //有xml配置的，也可通过appconfig implements WebMvcConfigurer 重写 configureMessageConverters
-    public  Map<String,String>  query(){
+    public  Map<String,String>  query(String name ){
         System.out.println("query ---");
         Map<String,String> map = new HashMap<>();
         System.out.println(MyController.class.getResource("/").getPath());
