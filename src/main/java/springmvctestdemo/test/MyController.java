@@ -2,6 +2,7 @@ package springmvctestdemo.test;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.HttpRequestHandler;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sun.applet.resources.MsgAppletViewer;
@@ -23,6 +24,7 @@ import java.util.Map;
  * @Version: 1.0
  */
 @Controller
+@ControllerAdvice
 public class MyController   {
     @RequestMapping("/query.do")
     @ResponseBody
