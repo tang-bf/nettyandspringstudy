@@ -7,6 +7,7 @@ import com.entity.UserEntity;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.CountDownLatch;
 
 @Controller
 @RequestMapping("/test")
@@ -22,6 +23,7 @@ public class TestController {
         System.out.println(name);
         System.out.println(request);
         System.out.println(response);
+        CountDownLatch
         System.out.println(userEntity);
         return  "test";
 
